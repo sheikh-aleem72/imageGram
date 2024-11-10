@@ -19,7 +19,7 @@ app.use("/api", apiRouter); // This line will route all url starting with /api t
 const swaggerDocs = swaggerJSDoc(options);
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
-app.get("/ping", isAuthenticate, (req, res) => {
+app.get("/ping", (req, res) => {
   console.log(req.query);
   console.log(req.body);
   console.log(req.user);
